@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:XCommerce"
+             x:Class="XCommerce.ChatPage">
+    <Grid HorizontalOptions="Fill" VerticalOptions="Fill">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+        </Grid.RowDefinitions>
+        <ListView Margin="6,6,0,4" Grid.Row="0" x:Name="MessageListView" VerticalOptions="FillAndExpand" HorizontalOptions="Fill" HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Margin="0,0,6,6" Orientation="Vertical">
+                            <Label Text="{Binding Sender}"
+                                TextColor="#00857D" FontFamily="Montserrat-Bold.ttf#Montserrat" />
+                            <Label Margin="0,-4,0,0" Text="{Binding Text}" LineBreakMode="WordWrap"
+                                FontFamily="Montserrat-Bold.ttf#Montserrat"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Entry Grid.Row="1" Placeholder="Type a message" PlaceholderColor="##e2e2e2" VerticalOptions="End" HorizontalOptions="Fill" HorizontalTextAlignment="End"
+               Completed="OnEntryCompleted"
+/>
+    </Grid>
+</ContentPage>

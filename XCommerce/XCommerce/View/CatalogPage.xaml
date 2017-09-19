@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XCommerce.CatalogPage"
+             Title="Our Menu">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="toolbar_filter.png" Clicked="OnChartClicked" Text="Chart"/>
+        <ToolbarItem Icon="toolbar_share.png" Clicked="OnChatClicked" Text="Chat"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ListView ItemsSource="{Binding Products}" IsPullToRefreshEnabled="false" RowHeight="300" CachingStrategy="RecycleElement" BackgroundColor="White" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+            <ListView.SeparatorColor>
+                <OnPlatform x:TypeArguments="Color">
+                    <On Platform="Android" Value="Transparent" />
+                </OnPlatform>
+            </ListView.SeparatorColor>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Image Source="{Binding Photo}" Aspect="AspectFill" Opacity="1">
+                            </Image>
+                            <Label Grid.Row="1" Text="{Binding Name}" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" FontSize="20" Margin="8,4,0,0" FontFamily="Montserrat-Bold.ttf#Montserrat">
+                            </Label>
+                            <Label Grid.Row="2" Text="{Binding Price,StringFormat='$ {0:N}'}}" TextColor="#00857D" Margin="8,0,0,16" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" FontSize="20" FontFamily="Montserrat-Bold.ttf#Montserrat" />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </ContentPage.Content>
+</ContentPage>

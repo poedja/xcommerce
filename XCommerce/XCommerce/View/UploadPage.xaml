@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XCommerce.UploadPage"
+             Title="Upload Product">
+    <ContentPage.ToolbarItems>
+        <!--<ToolbarItem Icon="toolbar_filter.png" Clicked="OnChartClicked" Text="Chart"/>-->
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Label       
+                Text=" ADD NEW PRODUCT "
+                FontAttributes="Italic"
+                FontSize="24"
+               
+                
+                FontFamily="Montserrat-Bold.ttf#Montserrat"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"/>
+
+
+                <Label       
+                Text=" Title "
+                FontAttributes="Italic"
+                FontSize="16"
+                Margin="0,12,0,0"
+                FontFamily="Montserrat-Bold.ttf#Montserrat"
+                HorizontalOptions="Start"
+                VerticalOptions="Center"/>
+                <Entry />
+                <Label       
+                Text=" Price "
+                FontAttributes="Italic"
+                FontSize="16"
+                
+               
+                FontFamily="Montserrat-Bold.ttf#Montserrat"
+                HorizontalOptions="Start"
+                VerticalOptions="Center"/>
+                <Entry Placeholder="Price in USD" />
+
+                <Label       
+                Text=" Product Photo "
+                FontAttributes="Italic"
+                FontSize="16"
+                
+               
+                FontFamily="Montserrat-Bold.ttf#Montserrat"
+                HorizontalOptions="Start"
+                VerticalOptions="Center"/>
+                <Grid BackgroundColor="Gray">
+                    <Image x:Name="ImageProduct" WidthRequest="300" HeightRequest="300" >
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnTakePhotoButtonClicked"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <BoxView x:Name="BoxSensor" Color="Black" WidthRequest="400" HeightRequest="80" VerticalOptions="Center" HorizontalOptions="Center"  />
+                    <ActivityIndicator x:Name="IndicatorVision" IsVisible="False" Color="Red"  VerticalOptions="Center" HorizontalOptions="Center" IsRunning="True" />
+                </Grid>
+                
+            </StackLayout>
+        </ScrollView>
+        
+    </ContentPage.Content>
+</ContentPage>

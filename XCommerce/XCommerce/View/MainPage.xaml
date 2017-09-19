@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:XCommerce"
+             x:Class="XCommerce.MainPage">
+
+    <Grid Padding="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Row="0"  BackgroundColor="#83D01B" Grid.ColumnSpan="2">
+            <Label       
+                Text=" OUR MENU "
+                FontAttributes="Italic"
+                FontSize="24"
+               
+                TextColor="White"
+                FontFamily="Montserrat-Bold.ttf#Montserrat"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"/>
+        </Grid>
+        <Image Grid.Row="1" Grid.ColumnSpan="2" Source="homeview.jpg"
+                            Aspect="AspectFill" Margin="0,-6,0,-6" Opacity="1"/>
+        <Grid
+                Margin="0,0,-3,0"
+                Grid.Row="2"
+                Grid.Column="0"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                HeightRequest="60"
+                BackgroundColor="#83D01B">
+            <Label     
+                FontFamily="Montserrat-Bold.ttf#Montserrat"
+                Text=" LOGIN " 
+                TextColor="White"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"/>
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer            
+                    Tapped="OnLoginTapped"  
+                    NumberOfTapsRequired="1" />
+            </Grid.GestureRecognizers>
+        </Grid>
+        <Grid
+                Grid.Row="2"
+                Margin="-3,0,0,0"
+                Grid.Column="1"
+                
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                HeightRequest="60"
+                BackgroundColor="#00857D">
+            <Label       
+                Text=" REGISTER " 
+                TextColor="White"
+                FontFamily="Montserrat-Bold.ttf#Montserrat"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"/>
+            <!--<Grid.GestureRecognizers>
+                <TapGestureRecognizer            
+                    Command="{Binding CheckoutCommand}"  
+                    NumberOfTapsRequired="1" />
+            </Grid.GestureRecognizers>-->
+        </Grid>
+    </Grid>
+
+</ContentPage>
